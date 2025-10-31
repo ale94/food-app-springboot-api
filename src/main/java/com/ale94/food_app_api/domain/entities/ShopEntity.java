@@ -3,6 +3,8 @@ package com.ale94.food_app_api.domain.entities;
 import java.io.Serializable;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -27,7 +29,7 @@ public class ShopEntity implements Serializable {
     private Long id;
     private String name;
     private String description;
-    private String addrees;
+    private String address;
     private String hours;
     private String img;
     private String banner;
@@ -40,6 +42,7 @@ public class ShopEntity implements Serializable {
     private Integer rating;
     private Integer ratingReview;
 
+    @JsonManagedReference
     @OneToMany(
             cascade = CascadeType.ALL,
             fetch = FetchType.EAGER,
