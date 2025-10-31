@@ -32,4 +32,9 @@ public class ShopController {
         return ResponseEntity.ok(this.shopService.getByTag(tag));
     }
 
+    @GetMapping("/{id}")
+    public ResponseEntity<ShopEntity> getById(@PathVariable Long id) {
+        return ResponseEntity.ok(this.shopService.getById(id));
+    }
+
 }

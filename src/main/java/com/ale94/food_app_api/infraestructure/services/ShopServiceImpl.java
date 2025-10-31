@@ -25,10 +25,15 @@ public class ShopServiceImpl implements ShopService {
 
     @Override
     public List<ShopEntity> getByTag(String tag) {
-        return shopRepository.findAll()
+        return this.shopRepository.findAll()
                 .stream()
                 .filter(shop -> shop.getTags().contains(tag))
                 .toList();
+    }
+
+    @Override
+    public ShopEntity getById(Long id) {
+        return this.shopRepository.findById(id).orElseThrow();
     }
 
 }

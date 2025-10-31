@@ -10,4 +10,6 @@ public interface ShopService {
 
     List<ShopEntity> getByTag(String tag);
 
+    ShopEntity getById(Long id);
+
 }
